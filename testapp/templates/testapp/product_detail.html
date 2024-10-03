@@ -1,0 +1,9 @@
+{% extends 'testapp/base.html' %}
+{% block content %}
+<h1>{{ object }}</h1>
+<p>{{ object.description }}</p>
+<!-- Use add to construct dynamic URL names -->
+<a href="{% url model_name|lower|add:'_edit' object.pk %}">Edit</a>
+<a href="{% url model_name|lower|add:'_delete' object.pk %}">Delete</a>
+
+{% endblock %}

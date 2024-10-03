@@ -1,0 +1,10 @@
+{% extends 'testapp/base.html' %}
+{% block content %}
+<h1>{{ object_list.model.__name__ }} List</h1>
+<ul>
+    {% for object in object_list %}
+        <li><a href="{{ object.get_absolute_url }}">{{ object }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url object_list.model.__name__|lower:'_create' %}">Create new</a>
+{% endblock %}
